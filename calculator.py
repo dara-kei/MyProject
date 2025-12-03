@@ -19,6 +19,7 @@ def calculator():
 
         num2 = input("Enter second number: ")
 
+
         # Проверка корректного введения второго числа
         try:
             num2 = float(num2)

@@ -18,7 +18,11 @@ for i in filtration:
 print(lst_of_passed_tests)
 
 # С помощью List comprehension в одну строку
-print([x['name'] for x in test_results if x['status'] == 'passed'])
+print([test['name'] for test in test_results if test['status'] == 'passed'])
+
+
+# C помощью List comprehension и lambda and filter
+print([test['name'] for test in filter(lambda test : test['status'] == 'passed', test_results)])
 
 
 # 2. Используйте лямбда-функцию с sort() для сортировки списка словарей тестов по ключу "duration"
@@ -45,15 +49,18 @@ print("3 exercise")
 emails = ['test@gmail.com', 'invalid-email', 'user@company.ru', 'no@domain']
 
 
-# С помощью lambda
-valid_emails = lambda email : '@' in email and email.endswith('.com') or email.endswith('.ru')
-list_of_valid_emails = []
-for email in emails:
-    if valid_emails(email):
-        list_of_valid_emails.append(email)
-print(f"Valid emails: {list_of_valid_emails}")
+# С помощью lambda and def
+
+check_emails = lambda email : '@' in email and (email.endswith('.com') or email.endswith('.ru'))
+
+def find_valid_email(func, lst):
+    list_of_valid_emails = []
+    for email in lst:
+        if func(email):
+            list_of_valid_emails.append(email)
+    return list_of_valid_emails
+print(f'Valid emails: {find_valid_email(check_emails, emails)}')
 
 
 # С помощью List comprehension в одну строку
-print([email for email in emails if '@' and '.com' in email or '@' and '.ru' in email])
-
+print([email for email in emails if '@' in email and (email.endswith('.com') or email.endswith('.ru'))])

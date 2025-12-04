@@ -75,6 +75,6 @@ print("4 exercise")
 
 
 def generate_report(title, *test_names, format = "html", **options):
-    print(f'Отчет: {title}\nФормат: {format}\nТесты: {', '.join(test_names)}\nАвтор: {options['author']}')
+    print(f"Отчет: {title}\nФормат: {format}\nТесты: {', '.join(test_names)}\nАвтор: {options.get('author', 'не указан')}")
 
 generate_report('Daily Report', 'test1', 'test2', 'test3', format = 'pdf', author = 'Tester')

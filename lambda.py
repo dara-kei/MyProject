@@ -51,7 +51,7 @@ emails = ['test@gmail.com', 'invalid-email', 'user@company.ru', 'no@domain']
 
 # С помощью lambda and def
 
-check_emails = lambda email : '@' in email and (email.endswith('.com') or email.endswith('.ru'))
+check_emails = lambda email : '@' in email and email.endswith('.com') or email.endswith('.ru')
 
 def find_valid_email(func, lst):
     list_of_valid_emails = []

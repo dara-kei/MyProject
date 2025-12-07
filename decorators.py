@@ -224,3 +224,70 @@ print(expensive_calculation(5)) #быстро возвращает из кеша
 print(expensive_calculation(6)) #медленно считает
 print(expensive_calculation(5)) #быстро возвращает из кеша
 
+
+
+# 6. Декоратор валидации параметров.
+# @validate_params({'username': str, 'age' : int}) -
+# проверяет типы параметров
+
+print("\n Exercise 6\n")
+
+def validate_params(user_data):
+    def real_decorator(func):
+        @functools.wraps(func)
+        def wrapper(**kwargs):
+            if type(kwargs.get('username')) == user_data['username'] and type(kwargs['age']) == user_data['age']:
+                return func(**kwargs)
+            elif type(kwargs.get('username')) != user_data['username']:
+                return 'Username must be str'
+            return 'Age must be int'
+        return wrapper
+    return real_decorator
+
+
+@validate_params({'username': str, 'age' : int})
+def create_user(**kwargs):
+    return f'User {kwargs["username"]} created'
+
+print(create_user(username = 'test', age = 25))
+print(create_user(username = 'test', age = '25'))
+print(create_user(username = 12, age = '25'))
+print(create_user(age = '25'))
+
+
+
+
+# 7. conditional_log(level = 'INFO')
+# логирует только если LOG_LEVEL
+# больше (серьезнее) переданного в декоратор уровня
+# чтобы выставить какие-то уровни по названиям, можно исп словарь
+print("\n Exercise 7\n")
+
+
+LOG_LEVEL = 'INFO'
+
+levels = {
+    'DEBUG': 10,
+    'INFO': 20,
+    'WARNING': 30,
+    'ERROR': 40,
+    'CRITICAL': 50,
+}
+
+
+def conditional_log(min_level = 'INFO'):
+    def decorator(func):
+        @functools.wraps(func)
+        def wrapper(*args, **kwargs):
+            if levels [LOG_LEVEL] > levels[min_level]:
+                return func(*args, **kwargs)
+        return wrapper
+    return decorator
+
+
+@conditional_log('DEBUG')
+def debug_test():
+    return 'debug_result'
+
+
+print(debug_test())

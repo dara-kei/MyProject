@@ -35,7 +35,7 @@ def tag(arg):
         @functools.wraps(func)
         def wrapper():
             print(f'[{arg}] Function {func.__name__} is running')
-            func()
+            return func()
         return wrapper
     return real_decorator
 
@@ -236,11 +236,11 @@ def validate_params(user_data):
     def real_decorator(func):
         @functools.wraps(func)
         def wrapper(**kwargs):
-            if type(kwargs.get('username')) == user_data['username'] and type(kwargs['age']) == user_data['age']:
-                return func(**kwargs)
-            elif type(kwargs.get('username')) != user_data['username']:
+            if type(kwargs.get('username')) != user_data['username']:
                 return 'Username must be str'
-            return 'Age must be int'
+            elif type(kwargs.get('age')) != user_data['age']:
+                return 'Age must be str'
+            return func(**kwargs)
         return wrapper
     return real_decorator
 
@@ -253,6 +253,7 @@ print(create_user(username = 'test', age = 25))
 print(create_user(username = 'test', age = '25'))
 print(create_user(username = 12, age = '25'))
 print(create_user(age = '25'))
+print(create_user(username = 'test'))
 
 
 
@@ -261,6 +262,7 @@ print(create_user(age = '25'))
 # логирует только если LOG_LEVEL
 # больше (серьезнее) переданного в декоратор уровня
 # чтобы выставить какие-то уровни по названиям, можно исп словарь
+
 print("\n Exercise 7\n")
 
 

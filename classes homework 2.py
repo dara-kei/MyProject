@@ -8,7 +8,7 @@ print("Exercise 1.1")
 
 class Product:
     def __init__(self, price):
-        self.price = price
+        self._price = price
 
     @property
     def price(self):
@@ -43,6 +43,7 @@ class Rectangle:
     def __init__(self, width, height):
         self.width = width
         self.height = height
+
     @property
     def area(self):
         return self.width * self.height
@@ -343,20 +344,23 @@ print("\nExercise 4.1.")
 
 
 class BaseTest(ABC):
-    def __init__(self, value):
-        self.value = value
-
     @abstractmethod
     def run(self):
         pass
 
 class APITest(BaseTest):
+    def __init__(self, endpoint):
+        self.endpoint = endpoint
+
     def run(self):
-        print(f"API test: checking endpoint /{self.value}")
+        print(f"API test: checking endpoint /{self.endpoint}")
 
 class UITest(BaseTest):
+    def __init__(self, page):
+        self.page = page
+
     def run(self):
-        print(f"UI test: checking page {self.value}")
+        print(f"UI test: checking page {self.page}")
 
 
 def run_all(tests):
@@ -463,16 +467,6 @@ print(d3) # 4.20 sec
 # ● принимает список имён тестов;
 # ● при вызове объекта runner() печатает список и количество тестов.
 
-# Вызов:
-# runner = TestRunner([&quot;test_login&quot;, &quot;test_signup&quot;, &quot;test_payment&quot;])
-# runner() # объект вызывается как функция
-# Вывод:
-# # Запускаем тесты:
-# # - test_login
-# # - test_signup
-# # - test_payment
-# # Всего тестов: 3
-#
 # __call__ делает экземпляры «вызываемыми», что удобно для обёрток, раннеров
 # и конфигураций.​
 

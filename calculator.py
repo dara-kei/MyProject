@@ -1,13 +1,18 @@
+# 8. Калькулятор с операциями
+# Добавить обработку исключений в свой калькулятор.
+# Обработать:
+# ● Деление на ноль.
+# ● Неизвестную операцию (поднять ValueError и поймать её снаружи).
+# ● Неверный ввод
+
 def calculator():
     while True:
         num1 = input("Enter first number: or q to quit: ")
-
 
        # Проверка выхода
         if num1 == "q":
             print("Calculator closed")
             break
-
 
         # Проверка корректного введения первого числа
         try:
@@ -16,9 +21,7 @@ def calculator():
             print("Invalid first number")
             continue
 
-
         num2 = input("Enter second number: ")
-
 
         # Проверка корректного введения второго числа
         try:
@@ -27,16 +30,12 @@ def calculator():
             print("Invalid second number")
             continue
 
-
         operator = input("Enter operator (+, -, *, /, **): ")
         res = 0
 
-
         # Проверка оператора
         if operator not in ["+", "-", "*", "/", "**"]:
-            print("Unknown operator")
-            continue
-
+            raise ValueError(operator)
 
         # Вычисления
         if operator == '+':
@@ -46,14 +45,12 @@ def calculator():
         elif operator == '*':
             res = num1 * num2
         elif operator == '/':
-            if num2 == 0:
-                print("Impossible to divide by zero")
-                continue
-            else:
+            try:
                 res = num1 / num2
+            except ZeroDivisionError:
+                print("Division by zero")
         elif operator == '**':
             res = num1 ** num2
-
 
         # Вывод результата
         if num1.is_integer() and num2.is_integer():
@@ -63,5 +60,7 @@ def calculator():
         else:
             print(f"{(num1)} {operator} {(num2)} = {res:.2f}")
 
-
-calculator()
+try:
+    calculator()
+except ValueError as e:
+    print(f"Unknown operator: {e}")

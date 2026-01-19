@@ -20,7 +20,6 @@ class Product:
         if value <= 0:
             raise ValueError(f'Price must be positive, got {value}')
         self._price = value
-        return self._price
 
 
     @property
@@ -29,10 +28,9 @@ class Product:
 
     @quantity.setter
     def quantity(self, value):
-        if value <= 0:
+        if value < 0:
             raise ValueError(f'Quantity must be positive, got {value}')
         self._quantity = value
-        return self._quantity
 
 
     def change_quantity(self, amount):

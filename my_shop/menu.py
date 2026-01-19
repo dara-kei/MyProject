@@ -18,7 +18,7 @@ def run_menu():
 
             elif choice == 1:
                 while True:
-                    m.cash_regicter()
+                    m.cash_register()
                     choice2 = input("Enter your choice: ")
                     try:
                         choice2 = int(choice2)
@@ -29,9 +29,20 @@ def run_menu():
 
                         elif choice2 == 1:
                             print("New Sale")
+                            products = my_storage.get_all_products()
+                            if len(products) == 0:
+                                print("No products in sale")
+                            for product in products:
+                                print(product)
+                            name = input("Enter product name: ")
+                            quantity = int(input("Enter product quantity: "))
+                            sale = my_storage.sell_product(name, quantity)
+                            my_storage.save_sale_to_file(sale)
+                            print(f"Total price: {sale['total']} dollars")
                             break
                         elif choice2 == 2:
                             print("Shift Report")
+                            my_storage.shift_report()
                             break
                         else:
                             print("Invalid choice")
@@ -74,6 +85,8 @@ def run_menu():
                         elif choice3 == 4:
                             print("Displaying a balance report..")
                             products = my_storage.get_all_products()
+                            if len(products) == 0:
+                                print("No products in sale")
                             for product in products:
                                 print(product)
 

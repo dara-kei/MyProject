@@ -1,11 +1,11 @@
 def main_menu():
     print("""Main menu:
-    1. Cash regicter
+    1. Cash register
     2. Management
     3. Exit""")
 
-def cash_regicter():
-    print("""Cash regicter: 
+def cash_register():
+    print("""Cash register: 
     1. New Sale
     2. Shift Report
     3. Back to Main Menu""")

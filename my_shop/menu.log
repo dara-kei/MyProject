@@ -1,0 +1,40 @@
+2026-01-20 13:58:40,485 | INFO | App started
+2026-01-20 13:58:40,485 | INFO | Main_menu started
+2026-01-20 13:58:42,743 | INFO | Management menu started
+2026-01-20 13:58:47,360 | INFO | New product created: name: Milk, price: 2.0, quantity 2
+2026-01-20 13:58:47,361 | DEBUG | New product Milk added to list of products
+2026-01-20 13:58:47,361 | INFO | Product added: Milk
+2026-01-20 13:58:47,361 | INFO | Management menu started
+2026-01-20 13:58:54,288 | INFO | Management menu closed by user, return to main menu
+2026-01-20 13:58:54,288 | INFO | Main_menu started
+2026-01-20 13:58:55,882 | INFO | Cash register started
+2026-01-20 13:59:03,873 | WARNING | Amount entered more than stock available
+2026-01-20 13:59:03,873 | WARNING | You don't have enough stock! Available: 2, got amount: 3
+2026-01-20 13:59:03,875 | INFO | Cash register started
+2026-01-20 13:59:36,884 | DEBUG | No sales
+2026-01-20 13:59:36,885 | INFO | Main_menu started
+2026-01-20 13:59:40,482 | INFO | Management menu started
+2026-01-20 13:59:47,172 | INFO | New product created: name: Cake, price: 9.0, quantity 4
+2026-01-20 13:59:47,172 | DEBUG | New product Cake added to list of products
+2026-01-20 13:59:47,172 | INFO | Product added: Cake
+2026-01-20 13:59:47,172 | INFO | Management menu started
+2026-01-20 13:59:54,466 | ERROR | Product Bread not existed
+2026-01-20 13:59:54,467 | WARNING | Product with name Bread does not exist
+2026-01-20 13:59:54,467 | INFO | Management menu started
+2026-01-20 14:00:06,733 | INFO | Main_menu started
+2026-01-20 14:00:09,254 | INFO | Cash register started
+2026-01-20 14:00:15,956 | WARNING | invalid literal for int() with base 10: 'r'
+2026-01-20 14:00:15,956 | INFO | Cash register started
+2026-01-20 14:00:31,042 | DEBUG | Quantity of product Milk reduced by 2
+2026-01-20 14:00:31,043 | INFO | New sale created. Name: Milk, quantity: 2, total price: 4.0
+2026-01-20 14:00:31,043 | DEBUG | New sale of Milk added to sales list
+2026-01-20 14:00:31,043 | DEBUG | Json file shift_report.json opened
+2026-01-20 14:00:31,044 | DEBUG | Json file shift_report.json written
+2026-01-20 14:00:31,045 | INFO | New sale ofMilk completed
+2026-01-20 14:00:31,045 | INFO | Cash register started
+2026-01-20 14:00:40,461 | ERROR | Product 2 not existed
+2026-01-20 14:00:40,461 | WARNING | Product with name 2 does not exist
+2026-01-20 14:00:40,461 | INFO | Cash register started
+2026-01-20 14:00:42,971 | INFO | Shift report displayed with te total sum: 4.0
+2026-01-20 14:00:42,971 | INFO | Main_menu started
+2026-01-20 14:00:49,705 | INFO | Main menu closed by user

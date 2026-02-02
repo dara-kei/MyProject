@@ -70,8 +70,8 @@ print("\nExercise 7")
 # записывает в dst только те строки, где есть keyword.
 
 def filter_file(src, dst, keyword):
-   with open(src, "r", encoding="utf-8") as f:
-       with open(dst, "w", encoding="utf-8") as f2:
+   with open(src, "r", encoding="utf-8") as f, \
+        open(dst, "w", encoding="utf-8") as f2:
            for line in f:
                if keyword in line:
                    f2.write(line)

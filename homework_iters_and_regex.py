@@ -146,11 +146,10 @@ print("\nexercise 8")
 # ● "25-12-23" == False
 
 def is_valid_date(date):
-    return bool(re.match(r"^\d{4}-\d{2}-\d{2}$", date))
+    return bool(re.search(r"^\d{4}-\d{2}-\d{2}$", date))
 
 assert is_valid_date("2025-12-23")
 assert not is_valid_date("25-12-23")
-
 
 
 print("\nexercise 9")
@@ -238,7 +237,7 @@ def find_phones(any_text):
     return re.findall(r"\+\d-\d{3}-\d{3}-\d{2}-\d{2}|\d\s\(\d{3}\)\s\d{3}-\d{2}-\d{2}", any_text)
 
 
-print(find_phones(text)) # ['+7-999-123-45-67', '8 (812) 555-66-77']
+print(find_phones(text))
 
 
 print("\nexercise 14")

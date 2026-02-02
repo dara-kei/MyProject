@@ -20,13 +20,13 @@ import logging
 # Задание 2. Логирование в файл
 # Условие. Все логи писать в test_results.log.
 
-# logging.basicConfig(level = logging.INFO, filename = "my_logs.log", filemode = "w")
-#
-# logging.debug("Debug")
-# logging.info("Info")
-# logging.warning("Warning")
-# logging.error("Error")
-# logging.critical("Critical")
+logging.basicConfig(level = logging.INFO, filename = "my_logs.log", filemode = "w")
+
+logging.debug("Debug")
+logging.info("Info")
+logging.warning("Warning")
+logging.error("Error")
+logging.critical("Critical")
 
 
 # Задание 3. Разные уровни для консоли и файла
@@ -74,16 +74,16 @@ import logging
 # Задание 5. Логирование исключения
 # Условие. Обработать ошибку HTTP с полным traceback.
 
-import requests
-
-logging.basicConfig(
-    level=logging.ERROR,
-    format="%(asctime)s - %(levelname)s - %(message)s"
-)
-
-try:
-    response = requests.get("http://bad-url")
-    response.raise_for_status() # вызовет exception с типом - requests.RequestException
-except requests.RequestException:
-    logging.exception("Error in running HTTP request")
+# import requests
+#
+# logging.basicConfig(
+#     level=logging.ERROR,
+#     format="%(asctime)s - %(levelname)s - %(message)s"
+# )
+#
+# try:
+#     response = requests.get("http://bad-url")
+#     response.raise_for_status() # вызовет exception с типом - requests.RequestException
+# except requests.RequestException:
+#     logging.exception("Error in running HTTP request")
 

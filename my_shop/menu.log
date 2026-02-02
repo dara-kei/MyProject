@@ -38,3 +38,39 @@
 2026-01-20 14:00:42,971 | INFO | Shift report displayed with te total sum: 4.0
 2026-01-20 14:00:42,971 | INFO | Main_menu started
 2026-01-20 14:00:49,705 | INFO | Main menu closed by user
+2026-01-20 17:31:28,920 | INFO | App started
+2026-01-20 17:31:28,921 | INFO | Main_menu started
+2026-01-20 17:31:43,548 | INFO | Management menu started
+2026-01-20 17:31:59,552 | INFO | New product created: name: Milk, price: 2.0, quantity 4
+2026-01-20 17:31:59,552 | DEBUG | New product Milk added to list of products
+2026-01-20 17:31:59,553 | INFO | Product added: Milk
+2026-01-20 17:31:59,553 | INFO | Management menu started
+2026-01-20 17:32:19,782 | INFO | New product created: name: Cake, price: 4.0, quantity 5
+2026-01-20 17:32:19,782 | DEBUG | New product Cake added to list of products
+2026-01-20 17:32:19,782 | INFO | Product added: Cake
+2026-01-20 17:32:19,782 | INFO | Management menu started
+2026-01-20 17:32:24,353 | INFO | Main_menu started
+2026-01-20 17:32:37,217 | INFO | Cash register started
+2026-01-20 17:32:46,224 | ERROR | Product Bread not existed
+2026-01-20 17:32:46,224 | WARNING | Product with name Bread does not exist
+2026-01-20 17:32:46,224 | INFO | Cash register started
+2026-01-20 17:33:03,220 | DEBUG | Quantity of product Milk reduced by 1
+2026-01-20 17:33:03,220 | INFO | New sale created. Name: Milk, quantity: 1, total price: 2.0
+2026-01-20 17:33:03,220 | DEBUG | New sale of Milk added to sales list
+2026-01-20 17:33:03,221 | DEBUG | Json file shift_report.json opened
+2026-01-20 17:33:03,223 | DEBUG | Json file shift_report.json written
+2026-01-20 17:33:03,224 | INFO | New sale ofMilk completed
+2026-01-20 17:33:03,224 | INFO | Cash register started
+2026-01-20 17:33:12,099 | INFO | Shift report displayed with te total sum: 2.0
+2026-01-20 17:33:12,099 | INFO | Main_menu started
+2026-01-20 17:33:33,351 | INFO | Cash register started
+2026-01-20 17:33:40,753 | DEBUG | Quantity of product Cake reduced by 2
+2026-01-20 17:33:40,753 | INFO | New sale created. Name: Cake, quantity: 2, total price: 8.0
+2026-01-20 17:33:40,753 | DEBUG | New sale of Cake added to sales list
+2026-01-20 17:33:40,767 | DEBUG | Json file shift_report.json opened
+2026-01-20 17:33:40,767 | DEBUG | Json file shift_report.json written
+2026-01-20 17:33:40,768 | INFO | New sale ofCake completed
+2026-01-20 17:33:40,768 | INFO | Cash register started
+2026-01-20 17:33:42,978 | INFO | Shift report displayed with te total sum: 10.0
+2026-01-20 17:33:42,978 | INFO | Main_menu started
+2026-01-20 17:33:56,753 | INFO | Main menu closed by user

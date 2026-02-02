@@ -3,7 +3,7 @@ import argparse
 
 parser = argparse.ArgumentParser(prog = "Calculator", description = "This app does calculations", epilog = "Thank you for reading")
 parser.add_argument("num1", type = float, help = "The first number")
-parser.add_argument("operator", help = "The operator")
+parser.add_argument("operator", choices = ["+", "-", "*", "/", "**" ], help = "The operator")
 parser.add_argument("num2", type = float,  help = "The second number")
 parser.add_argument(
     "--round",

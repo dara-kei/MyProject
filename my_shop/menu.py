@@ -1,7 +1,7 @@
 import manager as m
 from storage import Storage
 import logging
-from logging_config import setup_log
+from my_logging import setup_log
 
 
 
@@ -124,6 +124,7 @@ def run_menu():
 
                 elif choice3 == 3:
                     try:
+                        print("Changing the product quantity..")
                         name = input("Enter product name: ")
                         quantity = int(input("Enter product quantity: "))
                         my_storage.restock_product(name, quantity)
